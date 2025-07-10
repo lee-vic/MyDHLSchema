@@ -1186,7 +1186,7 @@ namespace MyDHLSchema
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         [System.ComponentModel.DataAnnotations.StringLength(8)]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
-        public UnitOfMeasurementTypeCode UnitOfMeasurement { get; set; } = default!;
+        public QuantityUnitOfMeasurementTypeCode UnitOfMeasurement { get; set; } = default!;
 
     }
     /// <summary>

@@ -1,4 +1,6 @@
-﻿namespace MyDHLSchema
+﻿using System.Collections.Generic;
+
+namespace MyDHLSchema
 {
     /// <summary>
     /// 创建DHL快递运单请求体
