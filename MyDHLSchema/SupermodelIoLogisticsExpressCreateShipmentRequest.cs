@@ -328,13 +328,13 @@ namespace MyDHLSchema
         public string Method { get; set; } = default!;
 
         /// <summary>
-        /// The DangerousGoods section indicates if there is dangerous good content within the shipment. &lt;BR&gt; The ContentID node contains the Content ID for Dangerous Good classification. &lt;BR&gt; It is required to provide the dangerous good Content ID for every dangerous good special service provided, and vice versa. &lt;BR&gt;
-        /// <br/>For the complete list of dangerous goods Content IDs and dangerous goods special services combinations, refer to Reference Data Guide section 5. valueAddedServicesDefinition\\dangerousGoods. &lt;BR&gt; Note: Please contact your DHL Express IT representative if additional assistance is required.&lt;BR&gt;&lt;BR&gt;
-        /// <br/>For dangerous goods shipment with Dry Ice example: UN1845 (Content ID: 901), additional node must be populated 'dryIceTotalNetWeight.'&lt;BR&gt;
-        /// <br/>For dangerous goods shipment with 'Excepted Quantities', additional node must be populated 'unCodes'. Few scenarios guideline to prepare a Dangerous Goods shipment for:&lt;BR&gt;&lt;BR&gt;
-        /// <br/>A) Dry Ice: &lt;BR&gt; 1.'serviceCode' element must contain value of 'HC'&lt;BR&gt; 2.'contentID' element consists of '901'&lt;BR&gt; 3.'dryIceTotalNetWeight' element consists of the total net weight of the dry ice in 'unitofMeasurement' &lt;BR&gt;&lt;BR&gt;
-        /// <br/>B) Lithium Battery: &lt;BR&gt; 1.'serviceType' element must contain value of 'HD', 'HM', 'HV' or 'HW'&lt;BR&gt; 2.'contentID' element consists of '966', '969', '967', '970' respectively&lt;BR&gt;&lt;BR&gt;
-        /// <br/>C) Excepted Quantities:&lt;BR&gt; 1.'serviceCode' element must contain value of 'HH'&lt;BR&gt; 2.'contentID' element consists of 'E01&lt;BR&gt; 3.'unCodes' element consists of the UN code associate with it.&lt;BR&gt;
+        /// The DangerousGoods section indicates if there is dangerous good content within the shipment. <BR> The ContentID node contains the Content ID for Dangerous Good classification. <BR> It is required to provide the dangerous good Content ID for every dangerous good special service provided, and vice versa. <BR>
+        /// <br/>For the complete list of dangerous goods Content IDs and dangerous goods special services combinations, refer to Reference Data Guide section 5. valueAddedServicesDefinition\dangerousGoods. <BR> Note: Please contact your DHL Express IT representative if additional assistance is required.<BR><BR>
+        /// <br/>For dangerous goods shipment with Dry Ice example: UN1845 (Content ID: 901), additional node must be populated 'dryIceTotalNetWeight.'<BR>
+        /// <br/>For dangerous goods shipment with 'Excepted Quantities', additional node must be populated 'unCodes'. Few scenarios guideline to prepare a Dangerous Goods shipment for:<BR><BR>
+        /// <br/>A) Dry Ice: <BR> 1.'serviceCode' element must contain value of 'HC'<BR> 2.'contentID' element consists of '901'<BR> 3.'dryIceTotalNetWeight' element consists of the total net weight of the dry ice in 'unitofMeasurement' <BR><BR>
+        /// <br/>B) Lithium Battery: <BR> 1.'serviceType' element must contain value of 'HD', 'HM', 'HV' or 'HW'<BR> 2.'contentID' element consists of '966', '969', '967', '970' respectively<BR><BR>
+        /// <br/>C) Excepted Quantities:<BR> 1.'serviceCode' element must contain value of 'HH'<BR> 2.'contentID' element consists of 'E01<BR> 3.'unCodes' element consists of the UN code associate with it.<BR>
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("dangerousGoods")]
@@ -436,7 +436,21 @@ namespace MyDHLSchema
         public string Value { get; set; } = default!;
 
         /// <summary>
-        /// Please provide reference type&lt;BR&gt;      &lt;BR&gt;      AAO, shipment reference number of receiver&lt;BR&gt;      CU, reference number of consignor - default&lt;BR&gt;      FF, reference number of freight forwarder&lt;BR&gt;      FN, freight bill number for &lt;ex works invoice number&gt;&lt;BR&gt;      IBC, inbound center reference number&lt;BR&gt;      LLR, load list reference for &lt;10-digit Shipment ID&gt;&lt;BR&gt;      OBC, outbound center reference number for &lt;SHIPMEN IDENTIFIER (COUNTRY OF ORIGIN)&gt;&lt;BR&gt;      PRN, pickup request number for &lt;BOOKINGREFERENCE NUMBER&gt;&lt;BR&gt;      ACP, local payer account number&lt;BR&gt;      ACS, local shipper account number&lt;BR&gt;      ACR, local receiver account number&lt;BR&gt;      CDN, customs declaration number&lt;BR&gt;      STD, eurolog 15-digit shipment id&lt;BR&gt;      CO, buyers order number
+        /// Please provide reference type
+        /// <BR>      <BR>      AAO, shipment reference number of receiver
+        /// <BR>      CU, reference number of consignor - default
+        /// <BR>      FF, reference number of freight forwarder
+        /// <BR>      FN, freight bill number for <ex works invoice number>
+        /// <BR>      IBC, inbound center reference number
+        /// <BR>      LLR, load list reference for <10-digit Shipment ID>
+        /// <BR>      OBC, outbound center reference number for <SHIPMEN IDENTIFIER (COUNTRY OF ORIGIN)>
+        /// <BR>      PRN, pickup request number for <BOOKINGREFERENCE NUMBER>
+        /// <BR>      ACP, local payer account number
+        /// <BR>      ACS, local shipper account number
+        /// <BR>      ACR, local receiver account number
+        /// <BR>      CDN, customs declaration number
+        /// <BR>      STD, eurolog 15-digit shipment id
+        /// <BR>      CO, buyers order number
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("typeCode")]
@@ -613,7 +627,23 @@ namespace MyDHLSchema
         public string USFilingTypeValue { get; set; } = default!;
 
         /// <summary>
-        /// The Incoterms rules are a globally-recognized set of standards, used worldwide in international and domestic contracts for the delivery of goods, illustrating responsibilities between buyer and seller for costs and risk, as well as cargo insurance.&lt;BR&gt;          EXW ExWorks&lt;BR&gt;          FCA Free Carrier&lt;BR&gt;          CPT Carriage Paid To&lt;BR&gt;          CIP Carriage and Insurance Paid To&lt;BR&gt;          DPU Delivered at Place Unloaded&lt;BR&gt;          DAP Delivered at Place&lt;BR&gt;          DDP Delivered Duty Paid&lt;BR&gt;          FAS Free Alongside Ship&lt;BR&gt;          FOB Free on Board&lt;BR&gt;          CFR Cost and Freight&lt;BR&gt;          CIF Cost, Insurance and Freight&lt;BR&gt;          DAF Delivered at Frontier&lt;BR&gt;          DAT Delivered at Terminal&lt;BR&gt;          DDU Delivered Duty Unpaid&lt;BR&gt;          DEQ Delivery ex Quay&lt;BR&gt;          DES Delivered ex Ship
+        /// The Incoterms rules are a globally-recognized set of standards, used worldwide in international and domestic contracts for the delivery of goods, illustrating responsibilities between buyer and seller for costs and risk, as well as cargo insurance.
+        /// <BR>          EXW ExWorks
+        /// <BR>          FCA Free Carrier
+        /// <BR>          CPT Carriage Paid To
+        /// <BR>          CIP Carriage and Insurance Paid To
+        /// <BR>          DPU Delivered at Place Unloaded
+        /// <BR>          DAP Delivered at Place
+        /// <BR>          DDP Delivered Duty Paid
+        /// <BR>          FAS Free Alongside Ship
+        /// <BR>          FOB Free on Board
+        /// <BR>          CFR Cost and Freight
+        /// <BR>          CIF Cost, Insurance and Freight
+        /// <BR>          DAF Delivered at Frontier
+        /// <BR>          DAT Delivered at Terminal
+        /// <BR>          DDU Delivered Duty Unpaid
+        /// <BR>          DEQ Delivery ex Quay
+        /// <BR>          DES Delivered ex Ship
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("incoterm")]
@@ -639,7 +669,15 @@ namespace MyDHLSchema
     public partial class SupermodelIoLogisticsExpressDocumentImage
     {
         /// <summary>
-        /// Please provide correct document type you wish to upload&lt;BR&gt;        &lt;BR&gt;        Possible values;&lt;BR&gt;        INV, Invoice&lt;BR&gt;        PNV, Proforma&lt;BR&gt;        COO, Certificate of Origin&lt;BR&gt;        NAF, Nafta Certificate of Origin&lt;BR&gt;        CIN, Commercial Invoice&lt;BR&gt;        DCL, Custom Declaration&lt;BR&gt;        AWB, Air Waybill and Waybill Document
+        /// Please provide correct document type you wish to upload
+        /// <BR>        <BR>        Possible values:
+        /// <BR>        INV, Invoice
+        /// <BR>        PNV, Proforma
+        /// <BR>        COO, Certificate of Origin
+        /// <BR>        NAF, Nafta Certificate of Origin
+        /// <BR>        CIN, Commercial Invoice
+        /// <BR>        DCL, Custom Declaration
+        /// <BR>        AWB, Air Waybill and Waybill Document
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("typeCode")]
@@ -1031,7 +1069,7 @@ namespace MyDHLSchema
     public partial class SupermodelIoLogisticsExpressRegistrationNumbers
     {
         /// <summary>
-        /// VAT: Value-Added tax&lt;BR&gt;      EIN: Employer Identification Number&lt;BR&gt;      GST: Goods and Service Tax&lt;BR&gt;      SSN: Social Security Number&lt;BR&gt;      EOR: European Union Registration and Identification&lt;BR&gt;      DUN: Data Universal Numberin System&lt;BR&gt;      FED: Federal Tax ID&lt;BR&gt;      STA: State Tax ID&lt;BR&gt;      CNP: Brazil CNPJ/CPF Federal Tax&lt;BR&gt;      IE: Brazil type IE/RG Federal Tax&lt;BR&gt;      INN: Russia bank details section INN&lt;BR&gt;      KPP: Russia bank details section KPP&lt;BR&gt;      OGR: Russia bank details section OGRN&lt;BR&gt;      OKP: Russia bank details section OKPO&lt;BR&gt;      SDT: Overseas Registered Supplier or Import One-Stop-Shop or GB VAT (foreign) registration or AUSid GST Registration or VAT on E-Commerce&lt;BR&gt;      FTZ: Free Trade Zone ID&lt;BR&gt;      DAN: Deferment Account Duties Only&lt;BR&gt;      TAN: Deferment Account Tax Only&lt;BR&gt;      DTF: Deferment Account Duties, Taxes and Fees Only&lt;BR&gt;      RGP: EU Registered Exporters registration ID&lt;BR&gt;       DLI: Driver's License &lt;BR&gt;      NID: National Identity Card&lt;BR&gt; PAS: Passport&lt;BR&gt; MID: Manufacturer ID&lt;BR&gt;IMS: UK Internal Market Scheme&lt;BR&gt; Note: 'IMS' code will be available in Production by the end of March 2025.&lt;BR&gt; EIC: eInvoice Carrier &lt;BR&gt; FTN: Foreign Tax Identification Number
+        /// VAT: Value-Added tax<BR>      EIN: Employer Identification Number<BR>      GST: Goods and Service Tax<BR>      SSN: Social Security Number<BR>      EOR: European Union Registration and Identification<BR>      DUN: Data Universal Numberin System<BR>      FED: Federal Tax ID<BR>      STA: State Tax ID<BR>      CNP: Brazil CNPJ/CPF Federal Tax<BR>      IE: Brazil type IE/RG Federal Tax<BR>      INN: Russia bank details section INN<BR>      KPP: Russia bank details section KPP<BR>      OGR: Russia bank details section OGRN<BR>      OKP: Russia bank details section OKPO<BR>      SDT: Overseas Registered Supplier or Import One-Stop-Shop or GB VAT (foreign) registration or AUSid GST Registration or VAT on E-Commerce<BR>      FTZ: Free Trade Zone ID<BR>      DAN: Deferment Account Duties Only<BR>      TAN: Deferment Account Tax Only<BR>      DTF: Deferment Account Duties, Taxes and Fees Only<BR>      RGP: EU Registered Exporters registration ID<BR>       DLI: Driver's License <BR>      NID: National Identity Card<BR> PAS: Passport<BR> MID: Manufacturer ID<BR>IMS: UK Internal Market Scheme<BR> Note: 'IMS' code will be available in Production by the end of March 2025.<BR> EIC: eInvoice Carrier <BR> FTN: Foreign Tax Identification Number
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("typeCode")]
@@ -1089,7 +1127,7 @@ namespace MyDHLSchema
     public partial class DangerousGoods
     {
         /// <summary>
-        /// Please enter valid DHL Express Dangerous good content id (please contact your DHL Express IT representative for the relevant content ID code if you are shipping Dan
+        /// Please enter valid DHL Express Dangerous good content id (please contact your DHL Express IT representative for the relevant content ID code if you are shipping Dangerous Goods)
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("contentId")]
@@ -1105,7 +1143,10 @@ namespace MyDHLSchema
         public double DryIceTotalNetWeight { get; set; } = default!;
 
         /// <summary>
-        /// The customDescription node contains the customized Dangerous Goods statement to declare contents accurately. The customDescription node value will be displayed in the Transport Label and Waybill Document, replacing the default IATA Dangerous Goods statement constructed based on contentId node.&lt;BR&gt;            Multiple customDescription nodes from multiple dangerousGoods nodes will be concatenated using comma separator with combined maximum limit of 200 characters.&lt;BR&gt;            &lt;BR&gt;            It is recommended to use customDescription for entire shipment for each dangerousGoods to fully utilize customDescription printout in Transport Label and Waybill Document.&lt;BR&gt;            &lt;BR&gt;            Note: For 'customDescription' usage, ensure all 'dangerousGoods' segments are including the 'customDescription' field value. Any of the dangerousGoods does not provide with customDescription field value will be ignored from printing in Transport Label and Waybill Document.
+        /// The customDescription node contains the customized Dangerous Goods statement to declare contents accurately. The customDescription node value will be displayed in the Transport Label and Waybill Document, replacing the default IATA Dangerous Goods statement constructed based on contentId node.
+        /// <BR>            Multiple customDescription nodes from multiple dangerousGoods nodes will be concatenated using comma separator with combined maximum limit of 200 characters.
+        /// <BR>            <BR>            It is recommended to use customDescription for entire shipment for each dangerousGoods to fully utilize customDescription printout in Transport Label and Waybill Document.
+        /// <BR>            <BR>            Note: For 'customDescription' usage, ensure all 'dangerousGoods' segments are including the 'customDescription' field value. Any of the dangerousGoods does not provide with customDescription field value will be ignored from printing in Transport Label and Waybill Document.
         /// <br/>
         /// </summary>
 
@@ -1187,7 +1228,7 @@ namespace MyDHLSchema
         public ImageOptionTypeCode TypeCode { get; set; } = default!;
 
         /// <summary>
-        /// Please enter DHL Express document template name. &lt;BR&gt;                Sample Transport label templates:&lt;BR&gt;                ECOM26_84_A4_001 &lt;BR&gt;                ECOM26_84_001 - default&lt;BR&gt;                ECOM_TC_A4&lt;BR&gt;                ECOM26_A6_002&lt;BR&gt;                ECOM26_84CI_001&lt;BR&gt;                ECOM26_84CI_002 - supported single customer barcode&lt;BR&gt;                ECOM26_84CI_003 - to be used if customer barcodes are used&lt;BR&gt;                ECOM_A4_RU_002&lt;BR&gt; ECOM26_84_LBBX_001 - supported for loose BBX shipment&lt;BR&gt; ECOM26_64_LBBX_001 - supported for loose BBX shipment&lt;BR&gt;Sample WaybillDoc templates&lt;BR&gt;                ARCH_8X4_A4_002&lt;BR&gt;                ARCH_8X4 - default&lt;BR&gt;                ARCH_6X4&lt;BR&gt;                ARCH_A4_RU_002&lt;BR&gt;                &lt;BR&gt;                Sample Commercial invoice templates:&lt;BR&gt;                COMMERCIAL_INVOICE_04 - This template can print the Shipper, Recipient, and Buyer and Importer address details and is on portrait orientation, exclusive use for preparing Loose BBX shipment.&lt;BR&gt;                COMMERCIAL_INVOICE_P_10 - (default) This template can print the Shipper, Recipient and upto two more additional address details in portrait orientation. Note: If customer provided more than four address roles in the request message and this template is selected, the rendered invoice will only contain four address roles based on order of priority: Shipper, Recipient, Seller, Importer, Exporter, Buyer. &lt;BR&gt;                COMMERCIAL_INVOICE_L_10 - This template can print the Shipper,Recipient, Buyer, and Importer and Exporter address details and is on landscape orientation..&lt;BR&gt;                RET_COM_INVOICE_A4_01 - This template can print the Shipper, Recipient and Importer of record address details and is on landscape orientation. This template is for exclusive use for certain shipment where the goods are actual 'returns'. The Shipper is the party that earlier has received the goods, but now wishes to return the goods to its originating party. The Recipient in this shipment scenario will receive the 'returned goods'. Therefore such request of shipment with an invoice rendering may utilize the specific invoice template for 'Returns Invoice'.&lt;BR&gt;                &lt;BR&gt;                Sample Shipment Receipt template&lt;BR&gt;                SHIP_RECPT_A4_RU_002&lt;BR&gt; SHIPRCPT_EN_001 - default &lt;BR&gt; &lt;BR&gt; Sample QR Code template template&lt;BR&gt;  QR_1_00_LL_PNG_001 - default
+        /// Please enter DHL Express document template name. <BR>                Sample Transport label templates:<BR>                ECOM26_84_A4_001 <BR>                ECOM26_84_001 - default<BR>                ECOM_TC_A4<BR>                ECOM26_A6_002<BR>                ECOM26_84CI_001<BR>                ECOM26_84CI_002 - supported single customer barcode<BR>                ECOM26_84CI_003 - to be used if customer barcodes are used<BR>                ECOM_A4_RU_002<BR> ECOM26_84_LBBX_001 - supported for loose BBX shipment<BR> ECOM26_64_LBBX_001 - supported for loose BBX shipment<BR>Sample WaybillDoc templates<BR>                ARCH_8X4_A4_002<BR>                ARCH_8X4 - default<BR>                ARCH_6X4<BR>                ARCH_A4_RU_002<BR>                <BR>                Sample Commercial invoice templates:<BR>                COMMERCIAL_INVOICE_04 - This template can print the Shipper, Recipient, and Buyer and Importer address details and is on portrait orientation, exclusive use for preparing Loose BBX shipment.<BR>                COMMERCIAL_INVOICE_P_10 - (default) This template can print the Shipper, Recipient and upto two more additional address details in portrait orientation. Note: If customer provided more than four address roles in the request message and this template is selected, the rendered invoice will only contain four address roles based on order of priority: Shipper, Recipient, Seller, Importer, Exporter, Buyer. <BR>                COMMERCIAL_INVOICE_L_10 - This template can print the Shipper,Recipient, Buyer, and Importer and Exporter address details and is on landscape orientation..<BR>                RET_COM_INVOICE_A4_01 - This template can print the Shipper, Recipient and Importer of record address details and is on landscape orientation. This template is for exclusive use for certain shipment where the goods are actual 'returns'. The Shipper is the party that earlier has received the goods, but now wishes to return the goods to its originating party. The Recipient in this shipment scenario will receive the 'returned goods'. Therefore such request of shipment with an invoice rendering may utilize the specific invoice template for 'Returns Invoice'.<BR>                <BR>                Sample Shipment Receipt template<BR>                SHIP_RECPT_A4_RU_002<BR> SHIPRCPT_EN_001 - default <BR> <BR> Sample QR Code template template<BR>  QR_1_00_LL_PNG_001 - default
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("templateName")]
@@ -1264,7 +1305,11 @@ namespace MyDHLSchema
         public bool RenderDHLLogo { get; set; } = default!;
 
         /// <summary>
-        /// To print respective Transport Label and Waybill document into A4 margin PDF.&lt;BR&gt;                Note: ECOM26_A6_002,ECOM26_84CI_001,ECOM26_84CI_002,ARCH_6X4,ARCH_8X4 template. &lt;BR&gt;                This option is applicable only for PDF encodingFormat selection.&lt;BR&gt;                false: Transport Label and Waybill document will use default margin settings (default behavior) &lt;BR&gt;                true: Transport Label and Waybill document will print into A4 margin PDF
+        /// To print respective Transport Label and Waybill document into A4 margin PDF.
+        /// <BR>                Note: ECOM26_A6_002,ECOM26_84CI_001,ECOM26_84CI_002,ARCH_6X4,ARCH_8X4 template. 
+        /// <BR>                This option is applicable only for PDF encodingFormat selection.
+        /// <BR>                false: Transport Label and Waybill document will use default margin settings (default behavior) 
+        /// <BR>                true: Transport Label and Waybill document will print into A4 margin PDF
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("fitLabelsToA4")]
@@ -1405,7 +1450,9 @@ namespace MyDHLSchema
         public Invoice Invoice { get; set; } = default!;
 
         /// <summary>
-        /// Please enter up to three remarks. &lt;BR&gt;              If using Customs Invoice template COMMERCIAL_INVOICE_04, the invoice can only print the first remarks field. The recommended max length is 20 characters. &lt;BR&gt;              If using Customs Invoice template COMMERCIAL_INVOICE_L_10 or COMMERCIAL_INVOICE_P_10, the invoice can print all three remraks fields.  The recommended max length is 45 characters.
+        /// Please enter up to three remarks. 
+        /// <BR>              If using Customs Invoice template COMMERCIAL_INVOICE_04, the invoice can only print the first remarks field. The recommended max length is 20 characters. 
+        /// <BR>              If using Customs Invoice template COMMERCIAL_INVOICE_L_10 or COMMERCIAL_INVOICE_P_10, the invoice can print all three remraks fields.  The recommended max length is 45 characters.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("remarks")]
@@ -1413,7 +1460,22 @@ namespace MyDHLSchema
         public System.Collections.Generic.ICollection<Remark> Remarks { get; set; } = default!;
 
         /// <summary>
-        /// Please enter additional charge to appear on the invoice&lt;BR&gt;              admin, Administration Charge&lt;BR&gt;              delivery, Delivery Charge&lt;BR&gt;              documentation, Documentation Charge&lt;BR&gt;              expedite, Expedite Charge&lt;BR&gt;              export, Export Charge&lt;BR&gt;              freight, Freight Charge&lt;BR&gt;              fuel_surcharge, Fuel Surcharge&lt;BR&gt;              logistic, Logistic Charge&lt;BR&gt;              other, Other Charge&lt;BR&gt;              packaging, Packaging Charge&lt;BR&gt;              pickup, Pickup Charge&lt;BR&gt;              handling, Handling Charge&lt;BR&gt;              vat, VAT Charge&lt;BR&gt;              insurance, Insurance Cost&lt;BR&gt;              reverse_charge, Reverse Charge
+        /// Please enter additional charge to appear on the invoice
+        /// <BR>              admin, Administration Charge
+        /// <BR>              delivery, Delivery Charge
+        /// <BR>              documentation, Documentation Charge
+        /// <BR>              expedite, Expedite Charge
+        /// <BR>              export, Export Charge
+        /// <BR>              freight, Freight Charge
+        /// <BR>              fuel_surcharge, Fuel Surcharge
+        /// <BR>              logistic, Logistic Charge
+        /// <BR>              other, Other Charge
+        /// <BR>              packaging, Packaging Charge
+        /// <BR>              pickup, Pickup Charge
+        /// <BR>              handling, Handling Charge
+        /// <BR>              vat, VAT Charge
+        /// <BR>              insurance, Insurance Cost
+        /// <BR>              reverse_charge, Reverse Charge
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("additionalCharges")]
@@ -1564,8 +1626,21 @@ namespace MyDHLSchema
         public string Value { get; set; } = default!;
 
         /// <summary>
-        /// Please provide reference type&lt;BR&gt;      &lt;BR&gt;      AAO, shipment reference number of receiver&lt;BR&gt;      CU, reference number of consignor - default&lt;BR&gt;      FF, reference number of freight forwarder&lt;BR&gt;      FN, freight bill number for &lt;ex works invoice number&gt;&lt;BR&gt;      IBC, inbound center reference number&lt;BR&gt;      LLR, load list reference for &lt;10-digit Shipment ID&gt;&lt;BR&gt;      OBC, outbound center reference number for &lt;SHIPMEN IDENTIFIER (COUNTRY OF ORIGIN)&gt;&lt;BR&gt;      PRN, pickup request number for &lt;BOOKINGREFERENCE NUMBER&gt;&lt;BR&gt;      ACP, local payer account number&lt;BR&gt;      ACS, local shipper account number&lt;BR&gt;      ACR, local receiver account number&lt;BR&gt;      CDN, customs declaration number&lt;BR&gt;      STD, eurolog 15-digit shipment id&lt;BR&gt;      CO, buyers order number
-        /// <br/>
+        /// Please provide reference type
+        /// <BR>      <BR>      AAO, shipment reference number of receiver
+        /// <BR>      CU, reference number of consignor - default
+        /// <BR>      FF, reference number of freight forwarder
+        /// <BR>      FN, freight bill number for <ex works invoice number>
+        /// <BR>      IBC, inbound center reference number
+        /// <BR>      LLR, load list reference for <10-digit Shipment ID>
+        /// <BR>      OBC, outbound center reference number for <SHIPMEN IDENTIFIER (COUNTRY OF ORIGIN)>
+        /// <BR>      PRN, pickup request number for <BOOKINGREFERENCE NUMBER>
+        /// <BR>      ACP, local payer account number
+        /// <BR>      ACS, local shipper account number
+        /// <BR>      ACR, local receiver account number
+        /// <BR>      CDN, customs declaration number
+        /// <BR>      STD, eurolog 15-digit shipment id
+        /// <BR>      CO, buyers order number
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("typeCode")]
@@ -1809,7 +1884,11 @@ namespace MyDHLSchema
         public System.Collections.Generic.ICollection<string> Instructions { get; set; } = default!;
 
         /// <summary>
-        /// Customer data text to be printed in&lt;BR&gt;                  customs invoice.&lt;BR&gt;                  Printed only when using Customs&lt;BR&gt;                  Invoice template&lt;BR&gt;                  COMMERCIAL_INVOICE_04.
+        /// Customer data text to be printed in
+        /// customs invoice.
+        /// Printed only when using Customs
+        /// Invoice template
+        /// COMMERCIAL_INVOICE_04.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("customerDataTextEntries")]
@@ -1849,7 +1928,7 @@ namespace MyDHLSchema
         public string TermsOfPayment { get; set; } = default!;
 
         /// <summary>
-        /// indicativeCustomsValues contains child nodes importCustomsDutyValue and importTaxesValue.&lt;BR&gt;                  &lt;BR&gt;                  These 2 child elements are only applicable for Commercial Invoice printing purpose in Customs Invoice template*: COMMERCIAL_INVOICE_P_10 and COMMERCIAL_INVOICE_L_10.&lt;BR&gt;                  If any of this child nodes are present, it will only be able to display up to three OtherCharges. &lt;BR&gt;                  &lt;BR&gt;                  Nonetheless, the ShipmentRequest can still contain up to five additionalCharges.&lt;BR&gt;                  If there are more than three additionalCharges, the third additionalCharges onwards will be combined and displayed under one single caption of 'Other Charges'.&lt;BR&gt;                  &lt;BR&gt;                  Note: If either first or second additionalCharges has typeCode of 'other', and there are more than three additionalCharges provided in the request, the additionalCharges with typeCode of 'other' will be consolidated under the combined 'Other Charges' caption as well.
+        /// indicativeCustomsValues contains child nodes importCustomsDutyValue and importTaxesValue.<BR>                  <BR>                  These 2 child elements are only applicable for Commercial Invoice printing purpose in Customs Invoice template*: COMMERCIAL_INVOICE_P_10 and COMMERCIAL_INVOICE_L_10.<BR>                  If any of this child nodes are present, it will only be able to display up to three OtherCharges. <BR>                  <BR>                  Nonetheless, the ShipmentRequest can still contain up to five additionalCharges.<BR>                  If there are more than three additionalCharges, the third additionalCharges onwards will be combined and displayed under one single caption of 'Other Charges'.<BR>                  <BR>                  Note: If either first or second additionalCharges has typeCode of 'other', and there are more than three additionalCharges provided in the request, the additionalCharges with typeCode of 'other' will be consolidated under the combined 'Other Charges' caption as well.
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("indicativeCustomsValues")]
@@ -2013,65 +2092,67 @@ namespace MyDHLSchema
         public int Value { get; set; } = default!;
 
         /// <summary>
-        /// Please provide correct unit of measurement&lt;BR&gt;                        &lt;BR&gt;Possible values:&lt;BR&gt;
-        /// <br/>  BOX Boxes&lt;BR&gt;
-        /// <br/>  2GM Centigram&lt;BR&gt;
-        /// <br/>  M3 Cubic Meters&lt;BR&gt;
-        /// <br/>  DPR Dozen Pairs&lt;BR&gt;
-        /// <br/>  DOZ Dozen&lt;BR&gt;
-        /// <br/>  PCS Pieces&lt;BR&gt;
-        /// <br/>  GM Grams&lt;BR&gt;
-        /// <br/>  GRS Gross&lt;BR&gt;
-        /// <br/>  KG Kilograms&lt;BR&gt;
-        /// <br/>  M Meters&lt;BR&gt;
-        /// <br/>  3GM Milligrams&lt;BR&gt;
-        /// <br/>  X No Unit Required&lt;BR&gt;
-        /// <br/>  NO Number&lt;BR&gt;
-        /// <br/>  PRS Pairs&lt;BR&gt;
-        /// <br/>  CM2 Square Centimeters&lt;BR&gt;
-        /// <br/>  2M2 Square Feet&lt;BR&gt;
-        /// <br/>  3M2 Square Inches&lt;BR&gt;
-        /// <br/>  M2 Square Meters&lt;BR&gt;
-        /// <br/>  4M2 Square Yards&lt;BR&gt;
-        /// <br/>  CM Centimeters&lt;BR&gt;
-        /// <br/>  CONE Cone&lt;BR&gt;
-        /// <br/>  CT Carat&lt;BR&gt;
-        /// <br/>  EA Each&lt;BR&gt;
-        /// <br/>  LBS Pounds&lt;BR&gt;
-        /// <br/>  RILL Rill&lt;BR&gt;
-        /// <br/>  ROLL Roll&lt;BR&gt;
-        /// <br/>  SET Set&lt;BR&gt;
-        /// <br/>  TU Time Unit&lt;BR&gt;
-        /// <br/>  KM kilometre&lt;BR&gt;
-        /// <br/>  IN inch&lt;BR&gt;
-        /// <br/>  FT foot&lt;BR&gt;
-        /// <br/>  YD yard&lt;BR&gt;
-        /// <br/>  MI mile (statute mile)&lt;BR&gt;
-        /// <br/>  LTR litre&lt;BR&gt;
-        /// <br/>  MMQ cubic millimetre&lt;BR&gt;
-        /// <br/>  CM3 cubic centimetre&lt;BR&gt;
-        /// <br/>  DMQ cubic decimetre&lt;BR&gt;
-        /// <br/>  MLT millilitre&lt;BR&gt;
-        /// <br/>  CLT centilitre&lt;BR&gt;
-        /// <br/>  DLT decilitre&lt;BR&gt;
-        /// <br/>  INQ cubic inch&lt;BR&gt;
-        /// <br/>  FT3 cubic foot&lt;BR&gt;
-        /// <br/>  YD3 cubic yard&lt;BR&gt;
-        /// <br/>  GLI gallon (UK)&lt;BR&gt;
-        /// <br/>  GLL gallon (US)&lt;BR&gt;
-        /// <br/>  PT pint (US)&lt;BR&gt;
-        /// <br/>  PTI pint (UK)&lt;BR&gt;
-        /// <br/>  QTI quart (UK)&lt;BR&gt;
-        /// <br/>  PTL liquid pint (US)&lt;BR&gt;
-        /// <br/>  QTL liquid quart (US)&lt;BR&gt;
-        /// <br/>  PTD dry pint (US)&lt;BR&gt;
-        /// <br/>  OZI fluid ounce (UK)&lt;BR&gt;
-        /// <br/>  J57 barrel (UK petroleum)&lt;BR&gt;
-        /// <br/>  NM3 Normalised cubic metre&lt;BR&gt;
-        /// <br/>  SM3 Standard cubic metre&lt;BR&gt;
-        /// <br/>  TNE tonne (metric ton)&lt;BR&gt;
-        /// <br/>  LB pound&lt;BR&gt;
-        /// <br/>  ONZ ounce (avoirdupois)&lt;BR&gt;
+        /// Please provide correct unit of measurement
+        /// 
+        /// Possible values:
+        /// <br/>  BOX Boxes
+        /// <br/> 2GM Centigram
+        /// <br/>  M3 Cubic Meters
+        /// <br/>  DPR Dozen Pairs
+        /// <br/>  DOZ Dozen
+        /// <br/>  PCS Pieces
+        /// <br/>  GM Grams
+        /// <br/>  GRS Gross
+        /// <br/>  KG Kilograms
+        /// <br/>  M Meters
+        /// <br/>  3GM Milligrams
+        /// <br/>  X No Unit Required
+        /// <br/>  NO Number
+        /// <br/>  PRS Pairs
+        /// <br/>  CM2 Square Centimeters
+        /// <br/>  2M2 Square Feet
+        /// <br/>  3M2 Square Inches
+        /// <br/>  M2 Square Meters
+        /// <br/>  4M2 Square Yards
+        /// <br/>  CM Centimeters
+        /// <br/>  CONE Cone
+        /// <br/>  CT Carat
+        /// <br/>  EA Each
+        /// <br/>  LBS Pounds
+        /// <br/>  RILL Rill
+        /// <br/>  ROLL Roll
+        /// <br/>  SET Set
+        /// <br/>  TU Time Unit
+        /// <br/>  KM kilometre
+        /// <br/>  IN inch
+        /// <br/>  FT foot
+        /// <br/>  YD yard
+        /// <br/>  MI mile (statute mile)
+        /// <br/>  LTR litre
+        /// <br/>  MMQ cubic millimetre
+        /// <br/>  CM3 cubic centimetre
+        /// <br/>  DMQ cubic decimetre
+        /// <br/>  MLT millilitre
+        /// <br/>  CLT centilitre
+        /// <br/>  DLT decilitre
+        /// <br/>  INQ cubic inch
+        /// <br/>  FT3 cubic foot
+        /// <br/>  YD3 cubic yard
+        /// <br/>  GLI gallon (UK)
+        /// <br/>  GLL gallon (US)
+        /// <br/>  PT pint (US)
+        /// <br/>  PTI pint (UK)
+        /// <br/>  QTI quart (UK)
+        /// <br/>  PTL liquid pint (US)
+        /// <br/>  QTL liquid quart (US)
+        /// <br/>  PTD dry pint (US)
+        /// <br/>  OZI fluid ounce (UK)
+        /// <br/>  J57 barrel (UK petroleum)
+        /// <br/>  NM3 Normalised cubic metre
+        /// <br/>  SM3 Standard cubic metre
+        /// <br/>  TNE tonne (metric ton)
+        /// <br/>  LB pound
+        /// <br/>  ONZ ounce (avoirdupois)
         /// <br/>  CEL degree Celsius                              
         /// </summary>
 
@@ -2254,7 +2335,7 @@ namespace MyDHLSchema
         /// <summary>
         /// Please provide the pre-calculated total value of all line items. preCalculatedTotalGoodsValue indicates pre-calculated sum of all Export Line Items’ Subtotal in Export Declaration. This field value will be rendered in Commercial Invoice output and manifest message.
         /// </summary>
-
+        /// 
         [System.Text.Json.Serialization.JsonPropertyName("preCalculatedTotalGoodsValue")]
         [System.ComponentModel.DataAnnotations.Range(0D, 999999999999999D)]
         public double PreCalculatedTotalGoodsValue { get; set; } = default!;
