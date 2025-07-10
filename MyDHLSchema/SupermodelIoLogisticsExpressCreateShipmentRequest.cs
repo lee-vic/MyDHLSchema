@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,7 +70,7 @@ namespace MyDHLSchema
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("outputImageProperties")]
-        public OutputImageProperties OutputImageProperties { get; set; } = default!;
+        public OutputImageProperty OutputImageProperties { get; set; } = default!;
 
         /// <summary>
         /// Here you can declare your customer references
@@ -136,7 +137,7 @@ namespace MyDHLSchema
 
         [System.Text.Json.Serialization.JsonPropertyName("prepaidCharges")]
         [System.ComponentModel.DataAnnotations.MaxLength(1)]
-        public System.Collections.Generic.ICollection<PrepaidCharges> PrepaidCharges { get; set; } = default!;
+        public System.Collections.Generic.ICollection<PrepaidCharge> PrepaidCharges { get; set; } = default!;
 
         /// <summary>
         /// If set to true, response will return transliterated text of shipper and receiver details.
@@ -201,7 +202,7 @@ namespace MyDHLSchema
 
         [System.Text.Json.Serialization.JsonPropertyName("specialInstructions")]
         [System.ComponentModel.DataAnnotations.MaxLength(1)]
-        public System.Collections.Generic.ICollection<SpecialInstructions> SpecialInstructions { get; set; } = default!;
+        public System.Collections.Generic.ICollection<SpecialInstruction> SpecialInstructions { get; set; } = default!;
 
         /// <summary>
         /// Please enter address and contact details related to your pickup
@@ -219,7 +220,7 @@ namespace MyDHLSchema
 
     }
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class SpecialInstructions
+    public partial class SpecialInstruction
     {
         /// <summary>
         /// Any special instructions user wish to send to the courier for the order pick-up.
@@ -342,7 +343,7 @@ namespace MyDHLSchema
 
     }
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class OutputImageProperties
+    public partial class OutputImageProperty
     {
         /// <summary>
         /// Printer DPI Resolution for X-axis and Y-axis (in DPI) for transport label and waybill document output
@@ -357,7 +358,7 @@ namespace MyDHLSchema
 
         [System.Text.Json.Serialization.JsonPropertyName("customerBarcodes")]
         [System.ComponentModel.DataAnnotations.MaxLength(1)]
-        public System.Collections.Generic.ICollection<CustomerBarcodes> CustomerBarcodes { get; set; } = default!;
+        public System.Collections.Generic.ICollection<CustomerBarcode> CustomerBarcodes { get; set; } = default!;
 
         /// <summary>
         /// Customer Logo Image to be printed on transport label
@@ -365,7 +366,7 @@ namespace MyDHLSchema
 
         [System.Text.Json.Serialization.JsonPropertyName("customerLogos")]
         [System.ComponentModel.DataAnnotations.MaxLength(1)]
-        public System.Collections.Generic.ICollection<CustomerLogos> CustomerLogos { get; set; } = default!;
+        public System.Collections.Generic.ICollection<CustomerLogo> CustomerLogos { get; set; } = default!;
 
         /// <summary>
         /// Please provide the format of the output documents. Note that invoice and shipment receipt will always come back as PDF
@@ -618,7 +619,7 @@ namespace MyDHLSchema
         [System.Text.Json.Serialization.JsonPropertyName("incoterm")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
-        public Content2Incoterm Incoterm { get; set; } = default!;
+        public IncotermTypeCode Incoterm { get; set; } = default!;
 
         /// <summary>
         /// Please enter Unit of measurement - metric,imperial
@@ -627,7 +628,7 @@ namespace MyDHLSchema
         [System.Text.Json.Serialization.JsonPropertyName("unitOfMeasurement")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
-        public Content2UnitOfMeasurement UnitOfMeasurement { get; set; } = default!;
+        public UnitOfMeasurementTypeCode UnitOfMeasurement { get; set; } = default!;
 
     }
    
@@ -643,7 +644,7 @@ namespace MyDHLSchema
 
         [System.Text.Json.Serialization.JsonPropertyName("typeCode")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
-        public TypeCode2 TypeCode { get; set; } = DHLAPIModelTestConsoleApp.TypeCode2.INV;
+        public DocumentImageTypeCode TypeCode { get; set; } = DocumentImageTypeCode.INV;
 
         /// <summary>
         /// Please provide the image file format for the document you want to upload
@@ -651,7 +652,7 @@ namespace MyDHLSchema
 
         [System.Text.Json.Serialization.JsonPropertyName("imageFormat")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
-        public ImageFormat ImageFormat { get; set; } = DHLAPIModelTestConsoleApp.ImageFormat.PDF;
+        public ImageFormatTypeCode ImageFormat { get; set; } = ImageFormatTypeCode.PDF;
 
         /// <summary>
         /// Please provide the base64 encoded document
@@ -794,7 +795,7 @@ namespace MyDHLSchema
 
     }
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class PrepaidCharges
+    public partial class PrepaidCharge
     {
         /// <summary>
         /// Please enter type of prepaid charge. At this moment only freight is supported
@@ -1037,7 +1038,7 @@ namespace MyDHLSchema
         [System.ComponentModel.DataAnnotations.Required]
         [System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength = 1)]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
-        public SupermodelIoLogisticsExpressRegistrationNumbersTypeCode TypeCode { get; set; } = DHLAPIModelTestConsoleApp.SupermodelIoLogisticsExpressRegistrationNumbersTypeCode.VAT;
+        public SupermodelIoLogisticsExpressRegistrationNumbersTypeCode TypeCode { get; set; } = SupermodelIoLogisticsExpressRegistrationNumbersTypeCode.VAT;
 
         /// <summary>
         /// Please enter registration number
@@ -1123,7 +1124,7 @@ namespace MyDHLSchema
 
     }
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CustomerBarcodes
+    public partial class CustomerBarcode
     {
         /// <summary>
         /// Please enter barcode content
@@ -1152,7 +1153,7 @@ namespace MyDHLSchema
 
     }
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class CustomerLogos
+    public partial class CustomerLogo
     {
         /// <summary>
         /// Please specify image file format
@@ -1161,7 +1162,7 @@ namespace MyDHLSchema
         [System.Text.Json.Serialization.JsonPropertyName("fileFormat")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
-        public CustomerLogosFileFormat FileFormat { get; set; } = default!;
+        public CustomerLogoFileFormat FileFormat { get; set; } = default!;
 
         /// <summary>
         /// Please provide base64 encoded logo image
@@ -1183,7 +1184,7 @@ namespace MyDHLSchema
         [System.Text.Json.Serialization.JsonPropertyName("typeCode")]
         [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
-        public ImageOptionsTypeCode TypeCode { get; set; } = default!;
+        public ImageOptionTypeCode TypeCode { get; set; } = default!;
 
         /// <summary>
         /// Please enter DHL Express document template name. &lt;BR&gt;                Sample Transport label templates:&lt;BR&gt;                ECOM26_84_A4_001 &lt;BR&gt;                ECOM26_84_001 - default&lt;BR&gt;                ECOM_TC_A4&lt;BR&gt;                ECOM26_A6_002&lt;BR&gt;                ECOM26_84CI_001&lt;BR&gt;                ECOM26_84CI_002 - supported single customer barcode&lt;BR&gt;                ECOM26_84CI_003 - to be used if customer barcodes are used&lt;BR&gt;                ECOM_A4_RU_002&lt;BR&gt; ECOM26_84_LBBX_001 - supported for loose BBX shipment&lt;BR&gt; ECOM26_64_LBBX_001 - supported for loose BBX shipment&lt;BR&gt;Sample WaybillDoc templates&lt;BR&gt;                ARCH_8X4_A4_002&lt;BR&gt;                ARCH_8X4 - default&lt;BR&gt;                ARCH_6X4&lt;BR&gt;                ARCH_A4_RU_002&lt;BR&gt;                &lt;BR&gt;                Sample Commercial invoice templates:&lt;BR&gt;                COMMERCIAL_INVOICE_04 - This template can print the Shipper, Recipient, and Buyer and Importer address details and is on portrait orientation, exclusive use for preparing Loose BBX shipment.&lt;BR&gt;                COMMERCIAL_INVOICE_P_10 - (default) This template can print the Shipper, Recipient and upto two more additional address details in portrait orientation. Note: If customer provided more than four address roles in the request message and this template is selected, the rendered invoice will only contain four address roles based on order of priority: Shipper, Recipient, Seller, Importer, Exporter, Buyer. &lt;BR&gt;                COMMERCIAL_INVOICE_L_10 - This template can print the Shipper,Recipient, Buyer, and Importer and Exporter address details and is on landscape orientation..&lt;BR&gt;                RET_COM_INVOICE_A4_01 - This template can print the Shipper, Recipient and Importer of record address details and is on landscape orientation. This template is for exclusive use for certain shipment where the goods are actual 'returns'. The Shipper is the party that earlier has received the goods, but now wishes to return the goods to its originating party. The Recipient in this shipment scenario will receive the 'returned goods'. Therefore such request of shipment with an invoice rendering may utilize the specific invoice template for 'Returns Invoice'.&lt;BR&gt;                &lt;BR&gt;                Sample Shipment Receipt template&lt;BR&gt;                SHIP_RECPT_A4_RU_002&lt;BR&gt; SHIPRCPT_EN_001 - default &lt;BR&gt; &lt;BR&gt; Sample QR Code template template&lt;BR&gt;  QR_1_00_LL_PNG_001 - default
@@ -1221,7 +1222,7 @@ namespace MyDHLSchema
 
         [System.Text.Json.Serialization.JsonPropertyName("invoiceType")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
-        public ImageOptionsInvoiceType InvoiceType { get; set; } = default!;
+        public ImageOptionInvoiceType InvoiceType { get; set; } = default!;
 
         /// <summary>
         /// Please enter ISO 3 letters language code for invoice or shipment receipt
@@ -1253,7 +1254,7 @@ namespace MyDHLSchema
 
         [System.Text.Json.Serialization.JsonPropertyName("encodingFormat")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
-        public ImageOptionsEncodingFormat EncodingFormat { get; set; } = default!;
+        public ImageOptionEncodingFormat EncodingFormat { get; set; } = default!;
 
         /// <summary>
         /// DHL Logo to be printed in Transport Label or Waybill Document
@@ -1294,4 +1295,979 @@ namespace MyDHLSchema
         public string ShipmentReceiptCustomerDataText { get; set; } = default!;
 
     }
+    /// <summary>
+    /// Package definition for /shipments
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SupermodelIoLogisticsExpressPackage
+    {
+        /// <summary>
+        /// Please contact your DHL Express representative if you wish to use a DHL specific package otherwise ignore this element.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("typeCode")]
+        [System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength = 2)]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+        public SupermodelIoLogisticsExpressPackageTypeCode TypeCode { get; set; } = default!;
+
+        /// <summary>
+        /// The weight of the package.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("weight")]
+        [System.ComponentModel.DataAnnotations.Range(0.001D, 999999999999D)]
+        public double Weight { get; set; } = default!;
+
+        /// <summary>
+        /// Dimensions of the package
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("dimensions")]
+        [System.ComponentModel.DataAnnotations.Required]
+        public Dimensions Dimensions { get; set; } = new Dimensions();
+
+        /// <summary>
+        /// Here you can declare your customer references for each package
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("customerReferences")]
+        [System.ComponentModel.DataAnnotations.MinLength(1)]
+        [System.ComponentModel.DataAnnotations.MaxLength(99)]
+        public System.Collections.Generic.ICollection<SupermodelIoLogisticsExpressPackageReference> CustomerReferences { get; set; } = default!;
+
+        /// <summary>
+        /// Identifiers section is on the package level where you can optionaly provide a DHL Express waybill number. This has to be enabled by your DHL Express IT contact.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("identifiers")]
+        [System.ComponentModel.DataAnnotations.MaxLength(3)]
+        public System.Collections.Generic.ICollection<SupermodelIoLogisticsExpressIdentifier> Identifiers { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter description of content for each package
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("description")]
+        [System.ComponentModel.DataAnnotations.StringLength(70, MinimumLength = 1)]
+        public string Description { get; set; } = default!;
+
+        /// <summary>
+        /// This allows you to define up to two bespoke barcodes on the DHL Express Tranport label. To use this feature please set outputImageProperties/imageOptions/templateName as ECOM26_84CI_003 for typeCode=label
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("labelBarcodes")]
+        [System.ComponentModel.DataAnnotations.MaxLength(2)]
+        public System.Collections.Generic.ICollection<LabelBarcodes> LabelBarcodes { get; set; } = default!;
+
+        /// <summary>
+        /// This allows you to enter up to two bespoke texts on the DHL Express Tranport label. To use this feature please set outputImageProperties/imageOptions/templateName as ECOM26_84CI_003 for typeCode=label
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("labelText")]
+        [System.ComponentModel.DataAnnotations.MaxLength(6)]
+        public System.Collections.Generic.ICollection<LabelText> LabelText { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter additional customer description
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("labelDescription")]
+        [System.ComponentModel.DataAnnotations.StringLength(80, MinimumLength = 1)]
+        public string LabelDescription { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter package reference number. If package reference number is provided for at least one package, then package reference number must be provided for all packages.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("referenceNumber")]
+        [System.ComponentModel.DataAnnotations.Range(1D, 999D)]
+        public double ReferenceNumber { get; set; } = default!;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class ExportDeclaration
+    {
+        /// <summary>
+        /// Please enter details for each export line item
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("lineItems")]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.MinLength(1)]
+        [System.ComponentModel.DataAnnotations.MaxLength(999)]
+        public System.Collections.Generic.ICollection<LineItem> LineItems { get; set; } = new System.Collections.ObjectModel.Collection<LineItem>();
+
+        /// <summary>
+        /// Please provide invoice related information
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("invoice")]
+        public Invoice Invoice { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter up to three remarks. &lt;BR&gt;              If using Customs Invoice template COMMERCIAL_INVOICE_04, the invoice can only print the first remarks field. The recommended max length is 20 characters. &lt;BR&gt;              If using Customs Invoice template COMMERCIAL_INVOICE_L_10 or COMMERCIAL_INVOICE_P_10, the invoice can print all three remraks fields.  The recommended max length is 45 characters.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("remarks")]
+        [System.ComponentModel.DataAnnotations.MaxLength(3)]
+        public System.Collections.Generic.ICollection<Remark> Remarks { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter additional charge to appear on the invoice&lt;BR&gt;              admin, Administration Charge&lt;BR&gt;              delivery, Delivery Charge&lt;BR&gt;              documentation, Documentation Charge&lt;BR&gt;              expedite, Expedite Charge&lt;BR&gt;              export, Export Charge&lt;BR&gt;              freight, Freight Charge&lt;BR&gt;              fuel_surcharge, Fuel Surcharge&lt;BR&gt;              logistic, Logistic Charge&lt;BR&gt;              other, Other Charge&lt;BR&gt;              packaging, Packaging Charge&lt;BR&gt;              pickup, Pickup Charge&lt;BR&gt;              handling, Handling Charge&lt;BR&gt;              vat, VAT Charge&lt;BR&gt;              insurance, Insurance Cost&lt;BR&gt;              reverse_charge, Reverse Charge
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("additionalCharges")]
+        [System.ComponentModel.DataAnnotations.MaxLength(5)]
+        public System.Collections.Generic.ICollection<AdditionalCharge> AdditionalCharges { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide destination port details
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("destinationPortName")]
+        public string DestinationPortName { get; set; } = default!;
+
+        /// <summary>
+        /// Name of port of departure, shipment or destination as required under the applicable delivery term.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("placeOfIncoterm")]
+        [System.ComponentModel.DataAnnotations.StringLength(256, MinimumLength = 1)]
+        public string PlaceOfIncoterm { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide Payer VAT number
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("payerVATNumber")]
+        public string PayerVATNumber { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter recipient reference
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("recipientReference")]
+        public string RecipientReference { get; set; } = default!;
+
+        /// <summary>
+        /// Exporter related details
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("exporter")]
+        public Exporter Exporter { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter package marks
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("packageMarks")]
+        public string PackageMarks { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide up to three declaration notes
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("declarationNotes")]
+        [System.ComponentModel.DataAnnotations.MaxLength(3)]
+        public System.Collections.Generic.ICollection<DeclarationNote> DeclarationNotes { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter export reference
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("exportReference")]
+        [System.ComponentModel.DataAnnotations.StringLength(40)]
+        public string ExportReference { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter export reason
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("exportReason")]
+        [System.ComponentModel.DataAnnotations.StringLength(30, MinimumLength = 1)]
+        public string ExportReason { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the reason for export
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("exportReasonType")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+        public ExportDeclarationExportReasonType ExportReasonType { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide details about export and import licenses
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("licenses")]
+        [System.ComponentModel.DataAnnotations.MaxLength(2)]
+        public System.Collections.Generic.ICollection<License> Licenses { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the shipment was sent for Personal (Gift) or Commercial (Sale) reasons
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("shipmentType")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+        public ExportDeclarationShipmentType ShipmentType { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the Customs Documents at invoice level
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("customsDocuments")]
+        [System.ComponentModel.DataAnnotations.MaxLength(50)]
+        public System.Collections.Generic.ICollection<CustomsDocument> CustomsDocuments { get; set; } = default!;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class Dimensions
+    {
+        /// <summary>
+        /// Length of the package
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("length")]
+        [System.ComponentModel.DataAnnotations.Range(0.001D, 9999999D)]
+        public double Length { get; set; } = default!;
+
+        /// <summary>
+        /// Width of the package
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("width")]
+        [System.ComponentModel.DataAnnotations.Range(0.001D, 9999999D)]
+        public double Width { get; set; } = default!;
+
+        /// <summary>
+        /// Height of the package
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("height")]
+        [System.ComponentModel.DataAnnotations.Range(0.001D, 9999999D)]
+        public double Height { get; set; } = default!;
+
+    }
+    /// <summary>
+    /// Package Reference model description
+    /// </summary>
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class SupermodelIoLogisticsExpressPackageReference
+    {
+        /// <summary>
+        /// Please provide reference
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("value")]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(35, MinimumLength = 1)]
+        public string Value { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide reference type&lt;BR&gt;      &lt;BR&gt;      AAO, shipment reference number of receiver&lt;BR&gt;      CU, reference number of consignor - default&lt;BR&gt;      FF, reference number of freight forwarder&lt;BR&gt;      FN, freight bill number for &lt;ex works invoice number&gt;&lt;BR&gt;      IBC, inbound center reference number&lt;BR&gt;      LLR, load list reference for &lt;10-digit Shipment ID&gt;&lt;BR&gt;      OBC, outbound center reference number for &lt;SHIPMEN IDENTIFIER (COUNTRY OF ORIGIN)&gt;&lt;BR&gt;      PRN, pickup request number for &lt;BOOKINGREFERENCE NUMBER&gt;&lt;BR&gt;      ACP, local payer account number&lt;BR&gt;      ACS, local shipper account number&lt;BR&gt;      ACR, local receiver account number&lt;BR&gt;      CDN, customs declaration number&lt;BR&gt;      STD, eurolog 15-digit shipment id&lt;BR&gt;      CO, buyers order number
+        /// <br/>
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("typeCode")]
+        [System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength = 2)]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+        public SupermodelIoLogisticsExpressPackageReferenceTypeCode TypeCode { get; set; } = SupermodelIoLogisticsExpressPackageReferenceTypeCode.CU;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class LabelBarcodes
+    {
+        /// <summary>
+        /// Position of the bespoke barcode
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("position")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+        public LabelBarcodePosition Position { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter valid Symbology code
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("symbologyCode")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+        public LabelBarcodeSymbologyCode SymbologyCode { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter barcode content
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("content")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Content { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter text below customer barcode
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("textBelowBarcode")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string TextBelowBarcode { get; set; } = default!;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class LabelText
+    {
+        /// <summary>
+        /// Position of the bespoke text
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("position")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+        public LabelTextPosition Position { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter caption to be printed in the tag value
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("caption")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [System.ComponentModel.DataAnnotations.StringLength(20)]
+        public string Caption { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter value to be printed for the respective tag in caption
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("value")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [System.ComponentModel.DataAnnotations.StringLength(40)]
+        public string Value { get; set; } = default!;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class LineItem
+    {
+        /// <summary>
+        /// Please provide line item number
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("number")]
+        [System.ComponentModel.DataAnnotations.Range(1, 999)]
+        public int Number { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide description of the line item
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("description")]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(512, MinimumLength = 1)]
+        public string Description { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide unit or article price line item value
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("price")]
+        [System.ComponentModel.DataAnnotations.Range(0D, 999999999999999D)]
+        public double Price { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter information about quantity for this line item
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("quantity")]
+        [System.ComponentModel.DataAnnotations.Required]
+        public Quantity Quantity { get; set; } = new Quantity();
+
+        /// <summary>
+        /// Please provide Commodity codes for the shipment at item line level
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("commodityCodes")]
+        [System.ComponentModel.DataAnnotations.MaxLength(2)]
+        public System.Collections.Generic.ICollection<CommodityCode> CommodityCodes { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the reason for export
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("exportReasonType")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+        public LineItemExportReasonType ExportReasonType { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter two letter ISO manufacturer country code
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("manufacturerCountry")]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(2, MinimumLength = 2)]
+        public string ManufacturerCountry { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter the total weight value for line item for gross weight or net weight. There is no auto calculation for number multiply with weight.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("weight")]
+        [System.ComponentModel.DataAnnotations.Required]
+        public Weight Weight { get; set; } = new Weight();
+
+        /// <summary>
+        /// Please provide if the Taxes is paid for the line item
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("isTaxesPaid")]
+        public bool IsTaxesPaid { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the additional information
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("additionalInformation")]
+        [System.ComponentModel.DataAnnotations.MinLength(1)]
+        [System.ComponentModel.DataAnnotations.MaxLength(8)]
+        public System.Collections.Generic.ICollection<string> AdditionalInformation { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the Customer References for the line item
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("customerReferences")]
+        [System.ComponentModel.DataAnnotations.MaxLength(100)]
+        public System.Collections.Generic.ICollection<CustomerReference> CustomerReferences { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the customs documents details
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("customsDocuments")]
+        [System.ComponentModel.DataAnnotations.MaxLength(50)]
+        public System.Collections.Generic.ICollection<CustomsDocument> CustomsDocuments { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide monetary value of the line item x quantity
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("preCalculatedLineItemTotalValue")]
+        [System.ComponentModel.DataAnnotations.Range(0D, 999999999999999D)]
+        public double PreCalculatedLineItemTotalValue { get; set; } = default!;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class Invoice
+    {
+        /// <summary>
+        /// Please enter commercial invoice number
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("number")]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(35, MinimumLength = 1)]
+        public string Number { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter accurate date when the invoice was issued at as that is what drives the exchange rate calculation during customs clearance process (where applicable).
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("date")]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(35, MinimumLength = 1)]
+        [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
+        public System.DateTimeOffset Date { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter who has signed the invoce
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("signatureName")]
+        [System.ComponentModel.DataAnnotations.StringLength(35)]
+        public string SignatureName { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide title of person who has signed the invoice
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("signatureTitle")]
+        [System.ComponentModel.DataAnnotations.StringLength(35)]
+        public string SignatureTitle { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the signature image
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("signatureImage")]
+        [System.ComponentModel.DataAnnotations.StringLength(1048576)]
+        public string SignatureImage { get; set; } = default!;
+
+        /// <summary>
+        /// Shipment instructions for customs invoice printing purposes. Printed only when using Customs Invoice template COMMERCIAL_INVOICE_04. If using Customs Invoice template 			COMMERCIAL_INVOICE_04, recommended max length is 120 characters.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("instructions")]
+        [System.ComponentModel.DataAnnotations.MinLength(1)]
+        [System.ComponentModel.DataAnnotations.MaxLength(1)]
+        public System.Collections.Generic.ICollection<string> Instructions { get; set; } = default!;
+
+        /// <summary>
+        /// Customer data text to be printed in&lt;BR&gt;                  customs invoice.&lt;BR&gt;                  Printed only when using Customs&lt;BR&gt;                  Invoice template&lt;BR&gt;                  COMMERCIAL_INVOICE_04.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("customerDataTextEntries")]
+        [System.ComponentModel.DataAnnotations.MinLength(1)]
+        [System.ComponentModel.DataAnnotations.MaxLength(6)]
+        public System.Collections.Generic.ICollection<string> CustomerDataTextEntries { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the total net weight
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("totalNetWeight")]
+        [System.ComponentModel.DataAnnotations.Range(0D, 999999999999D)]
+        public double TotalNetWeight { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the total gross weight
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("totalGrossWeight")]
+        [System.ComponentModel.DataAnnotations.Range(0D, 999999999999D)]
+        public double TotalGrossWeight { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the customer references at invoice level. It is recommended to provide less than 20 customer references of 'MRN' type code.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("customerReferences")]
+        [System.ComponentModel.DataAnnotations.MaxLength(100)]
+        public System.Collections.Generic.ICollection<CustomerReference> CustomerReferences { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the terms of payment
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("termsOfPayment")]
+        public string TermsOfPayment { get; set; } = default!;
+
+        /// <summary>
+        /// indicativeCustomsValues contains child nodes importCustomsDutyValue and importTaxesValue.&lt;BR&gt;                  &lt;BR&gt;                  These 2 child elements are only applicable for Commercial Invoice printing purpose in Customs Invoice template*: COMMERCIAL_INVOICE_P_10 and COMMERCIAL_INVOICE_L_10.&lt;BR&gt;                  If any of this child nodes are present, it will only be able to display up to three OtherCharges. &lt;BR&gt;                  &lt;BR&gt;                  Nonetheless, the ShipmentRequest can still contain up to five additionalCharges.&lt;BR&gt;                  If there are more than three additionalCharges, the third additionalCharges onwards will be combined and displayed under one single caption of 'Other Charges'.&lt;BR&gt;                  &lt;BR&gt;                  Note: If either first or second additionalCharges has typeCode of 'other', and there are more than three additionalCharges provided in the request, the additionalCharges with typeCode of 'other' will be consolidated under the combined 'Other Charges' caption as well.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("indicativeCustomsValues")]
+        public IndicativeCustomsValues IndicativeCustomsValues { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide pre-calculated total values for total goods value and total invoice value.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("preCalculatedTotalValues")]
+        public PreCalculatedTotalValues PreCalculatedTotalValues { get; set; } = default!;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class Remark
+    {
+        /// <summary>
+        /// Please enter remark text
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("value")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        public string Value { get; set; } = default!;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class AdditionalCharge
+    {
+        /// <summary>
+        /// Please provide the charge value
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("value")]
+        [System.ComponentModel.DataAnnotations.Range(0.001D, 999999999999999D)]
+        public double Value { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter charge caption
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("caption")]
+        public string Caption { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter charge type
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("typeCode")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+        public AdditionalChargeTypeCode TypeCode { get; set; } = default!;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class DeclarationNote
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("value")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [System.ComponentModel.DataAnnotations.StringLength(700)]
+        public string Value { get; set; } = default!;
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class Exporter
+    {
+        /// <summary>
+        /// Please provide exporter Id
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string Id { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide exporter code
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("code")]
+        public string Code { get; set; } = default!;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class License
+    {
+        /// <summary>
+        /// Please provide type of the license
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("typeCode")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+        public LicenseTypeCode TypeCode { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the license
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("value")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [System.ComponentModel.DataAnnotations.StringLength(16)]
+        public string Value { get; set; } = default!;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CustomsDocument
+    {
+        /// <summary>
+        /// Please provide the Customs Document type code at invoice level
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("typeCode")]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength = 1)]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+        public CustomsDocumentTypeCode TypeCode { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the Customs Document ID at invoice level
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("value")]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(35, MinimumLength = 1)]
+        public string Value { get; set; } = default!;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.Flags]
+    public enum LabelTextPosition
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"left1")]
+        Left1 = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"left2")]
+        Left2 = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"left3")]
+        Left3 = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"right1")]
+        Right1 = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"right2")]
+        Right2 = 16,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"right3")]
+        Right3 = 32,
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class Quantity
+    {
+        /// <summary>
+        /// Please enter number of pieces in the line item
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("value")]
+        [System.ComponentModel.DataAnnotations.Range(1, 1000000000)]
+        public int Value { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide correct unit of measurement&lt;BR&gt;                        &lt;BR&gt;Possible values:&lt;BR&gt;
+        /// <br/>  BOX Boxes&lt;BR&gt;
+        /// <br/>  2GM Centigram&lt;BR&gt;
+        /// <br/>  M3 Cubic Meters&lt;BR&gt;
+        /// <br/>  DPR Dozen Pairs&lt;BR&gt;
+        /// <br/>  DOZ Dozen&lt;BR&gt;
+        /// <br/>  PCS Pieces&lt;BR&gt;
+        /// <br/>  GM Grams&lt;BR&gt;
+        /// <br/>  GRS Gross&lt;BR&gt;
+        /// <br/>  KG Kilograms&lt;BR&gt;
+        /// <br/>  M Meters&lt;BR&gt;
+        /// <br/>  3GM Milligrams&lt;BR&gt;
+        /// <br/>  X No Unit Required&lt;BR&gt;
+        /// <br/>  NO Number&lt;BR&gt;
+        /// <br/>  PRS Pairs&lt;BR&gt;
+        /// <br/>  CM2 Square Centimeters&lt;BR&gt;
+        /// <br/>  2M2 Square Feet&lt;BR&gt;
+        /// <br/>  3M2 Square Inches&lt;BR&gt;
+        /// <br/>  M2 Square Meters&lt;BR&gt;
+        /// <br/>  4M2 Square Yards&lt;BR&gt;
+        /// <br/>  CM Centimeters&lt;BR&gt;
+        /// <br/>  CONE Cone&lt;BR&gt;
+        /// <br/>  CT Carat&lt;BR&gt;
+        /// <br/>  EA Each&lt;BR&gt;
+        /// <br/>  LBS Pounds&lt;BR&gt;
+        /// <br/>  RILL Rill&lt;BR&gt;
+        /// <br/>  ROLL Roll&lt;BR&gt;
+        /// <br/>  SET Set&lt;BR&gt;
+        /// <br/>  TU Time Unit&lt;BR&gt;
+        /// <br/>  KM kilometre&lt;BR&gt;
+        /// <br/>  IN inch&lt;BR&gt;
+        /// <br/>  FT foot&lt;BR&gt;
+        /// <br/>  YD yard&lt;BR&gt;
+        /// <br/>  MI mile (statute mile)&lt;BR&gt;
+        /// <br/>  LTR litre&lt;BR&gt;
+        /// <br/>  MMQ cubic millimetre&lt;BR&gt;
+        /// <br/>  CM3 cubic centimetre&lt;BR&gt;
+        /// <br/>  DMQ cubic decimetre&lt;BR&gt;
+        /// <br/>  MLT millilitre&lt;BR&gt;
+        /// <br/>  CLT centilitre&lt;BR&gt;
+        /// <br/>  DLT decilitre&lt;BR&gt;
+        /// <br/>  INQ cubic inch&lt;BR&gt;
+        /// <br/>  FT3 cubic foot&lt;BR&gt;
+        /// <br/>  YD3 cubic yard&lt;BR&gt;
+        /// <br/>  GLI gallon (UK)&lt;BR&gt;
+        /// <br/>  GLL gallon (US)&lt;BR&gt;
+        /// <br/>  PT pint (US)&lt;BR&gt;
+        /// <br/>  PTI pint (UK)&lt;BR&gt;
+        /// <br/>  QTI quart (UK)&lt;BR&gt;
+        /// <br/>  PTL liquid pint (US)&lt;BR&gt;
+        /// <br/>  QTL liquid quart (US)&lt;BR&gt;
+        /// <br/>  PTD dry pint (US)&lt;BR&gt;
+        /// <br/>  OZI fluid ounce (UK)&lt;BR&gt;
+        /// <br/>  J57 barrel (UK petroleum)&lt;BR&gt;
+        /// <br/>  NM3 Normalised cubic metre&lt;BR&gt;
+        /// <br/>  SM3 Standard cubic metre&lt;BR&gt;
+        /// <br/>  TNE tonne (metric ton)&lt;BR&gt;
+        /// <br/>  LB pound&lt;BR&gt;
+        /// <br/>  ONZ ounce (avoirdupois)&lt;BR&gt;
+        /// <br/>  CEL degree Celsius                              
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("unitOfMeasurement")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [System.ComponentModel.DataAnnotations.StringLength(8)]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+        public UnitOfMeasurementTypeCode UnitOfMeasurement { get; set; } = default!;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CommodityCode
+    {
+        /// <summary>
+        /// Please provide type of the commodity code
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("typeCode")]
+        [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+        public CommodityCodeTypeCode TypeCode { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the commodity code
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("value")]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(18, MinimumLength = 2)]
+        public string Value { get; set; } = default!;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    [System.Flags]
+    public enum LineItemExportReasonType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"permanent")]
+        Permanent = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"temporary")]
+        Temporary = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"return")]
+        Return = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"used_exhibition_goods_to_origin")]
+        Used_exhibition_goods_to_origin = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"intercompany_use")]
+        Intercompany_use = 16,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"commercial_purpose_or_sale")]
+        Commercial_purpose_or_sale = 32,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"personal_belongings_or_personal_use")]
+        Personal_belongings_or_personal_use = 64,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"sample")]
+        Sample = 128,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"gift")]
+        Gift = 256,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"return_to_origin")]
+        Return_to_origin = 512,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"warranty_replacement")]
+        Warranty_replacement = 1024,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"diplomatic_goods")]
+        Diplomatic_goods = 2048,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"defence_material")]
+        Defence_material = 4096,
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class Weight
+    {
+        /// <summary>
+        /// Please enter the total net weight value
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("netValue")]
+        [System.ComponentModel.DataAnnotations.Range(0D, 999999999999D)]
+        public double NetValue { get; set; } = default!;
+
+        /// <summary>
+        /// Please enter the total gross weight value
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("grossValue")]
+        [System.ComponentModel.DataAnnotations.Range(0D, 999999999999D)]
+        public double GrossValue { get; set; } = default!;
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class CustomerReference
+    {
+        /// <summary>
+        /// Please provide the line item reference type code. Please refer to the YAML Reference Data Guide PDF file for valid enumeration values.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("typeCode")]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(3, MinimumLength = 1)]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.JsonStringEnumConverter))]
+        public CustomerReferenceTypeCode TypeCode { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the line item reference
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("value")]
+        [System.ComponentModel.DataAnnotations.Required]
+        [System.ComponentModel.DataAnnotations.StringLength(35, MinimumLength = 1)]
+        public string Value { get; set; } = default!;
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    internal class DateFormatConverter : System.Text.Json.Serialization.JsonConverter<System.DateTimeOffset>
+    {
+        public override System.DateTimeOffset Read(ref System.Text.Json.Utf8JsonReader reader, System.Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
+        {
+            var dateTime = reader.GetString();
+            if (dateTime == null)
+            {
+                throw new System.Text.Json.JsonException("Unexpected JsonTokenType.Null");
+            }
+
+            return System.DateTimeOffset.Parse(dateTime);
+        }
+
+        public override void Write(System.Text.Json.Utf8JsonWriter writer, System.DateTimeOffset value, System.Text.Json.JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(value.ToString("yyyy-MM-dd"));
+        }
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class IndicativeCustomsValues
+    {
+        /// <summary>
+        /// Please provide the pre-calculated import customs duties value for the shipment
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("importCustomsDutyValue")]
+        [System.ComponentModel.DataAnnotations.Range(0D, 999999999999999D)]
+        public double ImportCustomsDutyValue { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the pre-calculated import taxes (VAT/GST) value for the shipment
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("importTaxesValue")]
+        [System.ComponentModel.DataAnnotations.Range(0D, 999999999999999D)]
+        public double ImportTaxesValue { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide pre-calculated total of all line items plus additional charges plus indicativeCustomsValues
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("totalWithImportDutiesAndTaxes")]
+        [System.ComponentModel.DataAnnotations.Range(0D, 999999999999999D)]
+        public double TotalWithImportDutiesAndTaxes { get; set; } = default!;
+
+        private System.Collections.Generic.IDictionary<string, object>? _additionalProperties;
+
+        [System.Text.Json.Serialization.JsonExtensionData]
+        public System.Collections.Generic.IDictionary<string, object> AdditionalProperties
+        {
+            get { return _additionalProperties ?? (_additionalProperties = new System.Collections.Generic.Dictionary<string, object>()); }
+            set { _additionalProperties = value; }
+        }
+
+    }
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class PreCalculatedTotalValues
+    {
+        /// <summary>
+        /// Please provide the pre-calculated total value of all line items. preCalculatedTotalGoodsValue indicates pre-calculated sum of all Export Line Items’ Subtotal in Export Declaration. This field value will be rendered in Commercial Invoice output and manifest message.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("preCalculatedTotalGoodsValue")]
+        [System.ComponentModel.DataAnnotations.Range(0D, 999999999999999D)]
+        public double PreCalculatedTotalGoodsValue { get; set; } = default!;
+
+        /// <summary>
+        /// Please provide the total value of all line items plus additional charges if any. preCalculatedTotalInvoiceValue indicates pre-calculated sum of all Export Line Items’ Subtotal  amount plus all Other Charges amount.  This field value will be used in rendered Commercial Invoice output, Waybill document and manifest message.
+        /// </summary>
+
+        [System.Text.Json.Serialization.JsonPropertyName("preCalculatedTotalInvoiceValue")]
+        [System.ComponentModel.DataAnnotations.Range(0D, 999999999999999D)]
+        public double PreCalculatedTotalInvoiceValue { get; set; } = default!;
+
+    }
+    
+    
 }
