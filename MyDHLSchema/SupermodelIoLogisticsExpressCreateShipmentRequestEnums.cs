@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyDHLSchema
 {
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum PartyDetailsTypeCode
     {
@@ -30,7 +30,7 @@ namespace MyDHLSchema
         Reseller = 32,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum SupermodelIoLogisticsExpressAccountTypeCode
     {
@@ -45,7 +45,7 @@ namespace MyDHLSchema
         DutiesTaxes = 4,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum OutputImagePropertiesEncodingFormat
     {
@@ -63,7 +63,7 @@ namespace MyDHLSchema
         Epl = 8,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum SupermodelIoLogisticsExpressReferenceTypeCode
     {
@@ -111,7 +111,7 @@ namespace MyDHLSchema
         CO = 8192,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum SupermodelIoLogisticsExpressIdentifierTypeCode
     {
@@ -126,7 +126,7 @@ namespace MyDHLSchema
         PieceId = 4,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum IncotermTypeCode
     {
@@ -180,7 +180,7 @@ namespace MyDHLSchema
         DES = 32768,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum UnitOfMeasurementTypeCode
     {
@@ -192,7 +192,7 @@ namespace MyDHLSchema
         Imperial = 2,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum DocumentImageTypeCode
     {
@@ -219,7 +219,7 @@ namespace MyDHLSchema
         NAF = 64,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum ImageFormatTypeCode
     {
@@ -240,7 +240,7 @@ namespace MyDHLSchema
         JPEG = 16,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum OnDemandDeliveryWhereToLeave
     {
@@ -252,7 +252,7 @@ namespace MyDHLSchema
         Neighbour = 2,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum ShipmentNotificationTypeCode
     {
@@ -261,7 +261,7 @@ namespace MyDHLSchema
         Email = 1,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum PrepaidChargesTypeCode
     {
@@ -270,7 +270,7 @@ namespace MyDHLSchema
         Freight = 1,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum PrepaidChargesMethod
     {
@@ -279,7 +279,7 @@ namespace MyDHLSchema
         Cash = 1,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum EstimatedDeliveryDateTypeCode
     {
@@ -291,7 +291,7 @@ namespace MyDHLSchema
         QDDF = 2,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum CustomerBarcodesSymbologyCode
     {
@@ -306,7 +306,7 @@ namespace MyDHLSchema
         _128 = 4,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum CustomerLogoFileFormat
     {
@@ -324,7 +324,7 @@ namespace MyDHLSchema
         JPG = 8,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum GetAdditionalInformationTypeCode
     {
@@ -342,7 +342,7 @@ namespace MyDHLSchema
         LinkLabelsByPieces = 8,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum SupermodelIoLogisticsExpressRegistrationNumbersTypeCode
     {
@@ -432,7 +432,7 @@ namespace MyDHLSchema
         FTN = 134217728,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum ImageOptionTypeCode
     {
@@ -453,7 +453,7 @@ namespace MyDHLSchema
         ShipmentReceipt = 16,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum ImageOptionInvoiceType
     {
@@ -468,7 +468,7 @@ namespace MyDHLSchema
         Returns = 4,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum ImageOptionEncodingFormat
     {
@@ -477,7 +477,7 @@ namespace MyDHLSchema
         Png = 1,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum SupermodelIoLogisticsExpressPackageTypeCode
     {
@@ -537,7 +537,7 @@ namespace MyDHLSchema
         WB2 = 131072,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum OnDemandDeliveryDeliveryOption
     {
@@ -553,7 +553,7 @@ namespace MyDHLSchema
 
     }
 
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum ExportDeclarationExportReasonType
     {
@@ -598,7 +598,7 @@ namespace MyDHLSchema
         Defence_material = 4096,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum ExportDeclarationShipmentType
     {
@@ -610,7 +610,7 @@ namespace MyDHLSchema
         Commercial = 2,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum SupermodelIoLogisticsExpressPackageReferenceTypeCode
     {
@@ -658,7 +658,7 @@ namespace MyDHLSchema
         CO = 8192,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum LabelBarcodePosition
     {
@@ -670,7 +670,7 @@ namespace MyDHLSchema
         Right = 2,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum LabelBarcodeSymbologyCode
     {
@@ -685,7 +685,7 @@ namespace MyDHLSchema
         _128 = 4,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum AdditionalChargeTypeCode
     {
@@ -736,7 +736,7 @@ namespace MyDHLSchema
         Reverse_charge = 16384,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum LicenseTypeCode
     {
@@ -748,7 +748,7 @@ namespace MyDHLSchema
         Import = 2,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum CustomsDocumentTypeCode
     {
@@ -892,7 +892,7 @@ namespace MyDHLSchema
         VEX = 8192,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum CustomerReferenceTypeCode
     {
@@ -994,7 +994,7 @@ namespace MyDHLSchema
         DDS = -2147483648,
 
     }
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.0.0))")]
+    
     [System.Flags]
     public enum CommodityCodeTypeCode
     {
@@ -1004,6 +1004,75 @@ namespace MyDHLSchema
 
         [System.Runtime.Serialization.EnumMember(Value = @"inbound")]
         Inbound = 2,
+
+    }
+    
+    [System.Flags]
+    public enum LabelTextPosition
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"left1")]
+        Left1 = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"left2")]
+        Left2 = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"left3")]
+        Left3 = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"right1")]
+        Right1 = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"right2")]
+        Right2 = 16,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"right3")]
+        Right3 = 32,
+
+    }
+    
+    [System.Flags]
+    public enum LineItemExportReasonType
+    {
+
+        [System.Runtime.Serialization.EnumMember(Value = @"permanent")]
+        Permanent = 1,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"temporary")]
+        Temporary = 2,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"return")]
+        Return = 4,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"used_exhibition_goods_to_origin")]
+        Used_exhibition_goods_to_origin = 8,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"intercompany_use")]
+        Intercompany_use = 16,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"commercial_purpose_or_sale")]
+        Commercial_purpose_or_sale = 32,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"personal_belongings_or_personal_use")]
+        Personal_belongings_or_personal_use = 64,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"sample")]
+        Sample = 128,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"gift")]
+        Gift = 256,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"return_to_origin")]
+        Return_to_origin = 512,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"warranty_replacement")]
+        Warranty_replacement = 1024,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"diplomatic_goods")]
+        Diplomatic_goods = 2048,
+
+        [System.Runtime.Serialization.EnumMember(Value = @"defence_material")]
+        Defence_material = 4096,
 
     }
 }
