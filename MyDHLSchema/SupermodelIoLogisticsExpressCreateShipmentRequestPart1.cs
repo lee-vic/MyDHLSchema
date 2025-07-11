@@ -915,7 +915,7 @@ namespace MyDHLSchema
         public string ProvinceName { get; set; } = default!;
 
         /// <summary>
-        /// Please enter your country name
+        /// 请填写国家名称
         /// </summary>
 
         [System.Text.Json.Serialization.JsonPropertyName("countryName")]
